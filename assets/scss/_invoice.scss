@@ -1,0 +1,20 @@
+.invoices {
+  .form-control,
+  .form-select {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 14px !important;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+}
+.invoices_list {
+  width: 60%;
+  @media (max-width: 1199.98px) {
+    width: 100%;
+  }
+
+  .offcanvas-body {
+  }
+}

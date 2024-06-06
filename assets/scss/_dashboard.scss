@@ -1,0 +1,530 @@
+.dashboard {
+  background: $color6;
+  padding: 15px;
+
+  .dashboard-tabs {
+    .nav-pills .nav-item .nav-link {
+      padding: 0.25rem 0.8rem;
+
+      &.active {
+        color: $color7;
+        background: $color2;
+
+        img {
+          filter: invert(100%);
+        }
+      }
+    }
+  }
+
+  .summary-status .single-card {
+    border-radius: 0.45rem;
+    border: 0.0625rem solid rgba(231, 234, 243, 0.7);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+    &-header {
+      .title {
+        font-size: $clamp16;
+      }
+
+      .date-range-text {
+        color: $color4;
+        font-size: $clamp12;
+      }
+    }
+
+    &-content {
+      .card-title {
+        font-size: $clamp24;
+        color: $color2;
+      }
+
+      .card-text {
+        color: $color5;
+        font-size: $clamp16;
+        font-weight: 500;
+      }
+    }
+
+    &-footer {
+      min-height: 90px;
+
+      .row {
+        font-size: $clamp14;
+
+        .col-6:nth-child(odd) {
+          color: $color5;
+          font-weight: 500;
+        }
+
+        .col-6:nth-child(even) {
+          color: $color4;
+        }
+      }
+    }
+  }
+
+  .analysis-status .single-card {
+    border-radius: 0.45rem;
+    border: 0.0625rem solid rgba(231, 234, 243, 0.7);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+    &-header {
+      .title {
+        font-size: $clamp16;
+      }
+
+      .card-text {
+        color: $color4;
+        font-size: $clamp12;
+      }
+    }
+
+    &-content {
+      min-height: 180px;
+
+      .card-title {
+        color: $color2;
+        font-size: $clamp24;
+
+        span {
+          font-size: $clamp12;
+        }
+      }
+    }
+
+    &-footer {
+      min-height: 35px;
+
+      .row {
+        font-size: $clamp13;
+
+        .col-6:nth-child(odd) {
+          color: $color5;
+          font-weight: 500;
+        }
+
+        .col-6:nth-child(even) {
+          color: $color4;
+        }
+      }
+    }
+  }
+
+  .customers-status .single-card {
+    border-radius: 0.45rem;
+    border: 0.0625rem solid rgba(231, 234, 243, 0.7);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+    &-header {
+      .title {
+        font-size: $clamp16;
+      }
+
+      .date-range-text {
+        color: $color4;
+        font-size: $clamp12;
+      }
+    }
+
+    &-content {
+      .card-title {
+        font-size: $clamp26;
+        color: $color2;
+      }
+
+      .card-text {
+        color: $color5;
+        font-size: $clamp16;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .performance-status .single-card {
+    border-radius: 0.45rem;
+    border: 0.0625rem solid rgba(231, 234, 243, 0.7);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+    &-header {
+      .title {
+        font-size: $clamp16;
+      }
+
+      .card-text {
+        color: $color4;
+        font-size: $clamp12;
+      }
+    }
+
+    .single-card-footer {
+      .row {
+        font-size: $clamp14;
+
+        .col-6 {
+          margin-bottom: 0.45rem;
+
+          &:nth-child(odd) {
+            font-weight: 500;
+          }
+
+          .progress {
+            height: 10px;
+            border-radius: 0.687rem;
+
+            .progress-bar {
+              background: $color2;
+              font-size: 9px;
+              border-radius: 0.687rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .notification-status .single-card {
+    border-radius: 0.45rem;
+    border: 0.0625rem solid rgba(231, 234, 243, 0.7);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+    &-header {
+      .title {
+        font-size: $clamp16;
+      }
+
+      .card-text {
+        color: $color4;
+        font-size: $clamp12;
+      }
+    }
+
+    &-content .list-unstyled {
+      li {
+        &:not(:last-child) {
+          margin-bottom: 0.68rem;
+        }
+
+        .left-text span {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .appointments-status {
+    top: 75px;
+    z-index: 99;
+
+    .card.card-body {
+      border-radius: 0.45rem;
+      border: 0.0625rem solid rgba(231, 234, 243, 0.7);
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+      .title {
+        font-size: $clamp16;
+      }
+
+      .list-title {
+        color: $color4;
+      }
+
+      .appointments-list {
+        li {
+          padding: 0.5rem 0;
+          margin: 0 0.15rem;
+          border: 1px dashed rgba(231, 234, 243, 0.7);
+          border-radius: 0.45rem;
+
+          &:not(:last-child) {
+            margin-bottom: 1.5rem;
+          }
+
+          .dashed-top {
+            border-top: 1px dashed rgba(231, 234, 243, 0.7);
+
+            .billvalue span {
+              color: $color2;
+            }
+          }
+        }
+      }
+
+      .no-appointments-list {
+        padding: 1.25rem;
+        border-radius: 0.45rem;
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+        background: lighten($color2, $amount: 51);
+        border-style: dotted solid double;
+        border-style: dotted solid double;
+        border-color: $color2;
+
+        h6 {
+          font-size: $clamp16;
+        }
+      }
+    }
+  }
+
+  #customer-experience-pill {
+    .performance-card {
+      border-radius: 0.45rem;
+      border: 0.0625rem solid rgba(231, 234, 243, 0.7);
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+      .card-header {
+        background: transparent;
+
+        .card-title {
+          font-size: $clamp16;
+        }
+
+        .btn-link {
+          color: $color5;
+          font-size: $clamp12;
+        }
+      }
+
+      .card-text {
+        color: $color4;
+        font-size: $clamp12;
+      }
+
+      .card-body {
+        .nav-pills .nav-item .nav-link {
+          color: $color2;
+          font-weight: 600;
+
+          &.active,
+          &:hover {
+            color: $color2;
+            background-color: transparent;
+            border-radius: 0;
+            border-bottom: 2px solid $color2;
+          }
+        }
+
+        #pills-recent,
+        #pills-overall {
+          .rating {
+            color: $color5;
+            font-weight: 600;
+          }
+
+          .list-inline .list-inline-item a i {
+            color: $color2;
+          }
+        }
+      }
+    }
+
+    .reviewsentiment-card,
+    .rra-card,
+    .rating-trands-card {
+      border-radius: 0.45rem;
+      border: 0.0625rem solid rgba(231, 234, 243, 0.7);
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+      .card-header {
+        background: transparent;
+
+        .card-title {
+          font-size: $clamp16;
+        }
+
+        .btn-link {
+          color: $color5;
+          font-size: $clamp12;
+        }
+      }
+
+      .card-text {
+        color: $color4;
+        font-size: $clamp12;
+      }
+    }
+  }
+
+  .review-rating-source {
+    border-radius: 0.45rem;
+    border: 0.0625rem solid rgba(231, 234, 243, 0.7);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+    .card-header {
+      background: transparent;
+
+      .card-title {
+        font-size: $clamp16;
+      }
+
+      .card-text {
+        color: $color4;
+        font-size: $clamp12;
+      }
+    }
+
+    .card-body .list-unstyled li {
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+
+      h6 {
+        font-size: $clamp16;
+      }
+
+      p {
+        color: $color4;
+        font-size: $clamp12;
+      }
+    }
+  }
+
+  .customer-insights {
+    border-radius: 0.45rem;
+    border: 0.0625rem solid rgba(231, 234, 243, 0.7);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+
+    .card-header {
+      background: transparent;
+
+      .card-title {
+        font-size: $clamp16;
+      }
+
+      .card-text {
+        color: $color4;
+        font-size: $clamp12;
+      }
+    }
+
+    .card-body {
+      .nav-pills .nav-item .nav-link {
+        color: $color5;
+        border-radius: 0;
+        border-bottom: 2px solid $color4;
+
+        &.active,
+        &:hover {
+          color: $color2;
+          border-radius: 0;
+          border-bottom: 2px solid $color2;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.invoice-offcanvas {
+  width: 100%;
+
+  .offcanvas-body {
+    margin-bottom: 4.2rem;
+
+    .credit-details {
+      background: rgba($color2, 0.05);
+      border: 0.0625rem solid rgba($color2, 0.15);
+
+      .text-subtitle {
+        color: $color4;
+        font-size: $clamp13;
+        margin-bottom: 0;
+      }
+
+      .title {
+        font-size: $clamp13;
+      }
+
+      .list-unstyled li {
+        font-size: $clamp16;
+
+        .list-group {
+          .list-group-item-check {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+            pointer-events: none;
+          }
+
+          .list-group-item-check:checked + .list-group-item {
+            color: #fff;
+            background-color: $color2;
+          }
+
+          .list-group-checkable {
+            display: grid;
+            gap: 0.5rem;
+            border: 0;
+
+            .list-group-item {
+              cursor: pointer;
+              border-radius: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .invoice-lists {
+      li {
+        position: relative;
+
+        &:not(:last-child) {
+          margin-bottom: 0.65rem;
+        }
+
+        .card.card-body {
+          background: rgba($color2, 0.05);
+          border-radius: 0.45rem;
+          border: 0.0625rem solid rgba($color2, 0.15);
+          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.04);
+
+          .header {
+            position: relative;
+
+            .content {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              h6 {
+                font-size: $clamp14;
+              }
+            }
+
+            .delete {
+              text-decoration: none;
+              position: absolute;
+              right: -16px;
+              top: -2px;
+            }
+          }
+        }
+      }
+    }
+    .invoice-lists-shotcuts {
+      border: none;
+      position: fixed;
+      border-radius: 0;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      box-shadow: 0.125rem 0 0.25rem rgba(0, 0, 0, 0.075);
+      z-index: 1;
+
+      .list-inline li {
+        margin-top: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        a {
+          text-decoration: none;
+          color: $color5;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

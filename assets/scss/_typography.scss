@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
+
+body {
+  // font-family: "Nunito", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-size: 0.861rem;
+  color: $color5;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 600;
+}
+
+dd {
+  margin-bottom: 0.3rem;
+}
+
+.text-color-one {
+  color: $color1 !important;
+}
+
+.text-color-two {
+  color: $color2 !important;
+}
+
+.text-color-three {
+  color: $color3 !important;
+}
+
+.bg-color-one {
+  background: $color1 !important;
+}
+
+.bg-color-two {
+  background: $color2 !important;
+}
+
+.bg-color-three {
+  background: $color3 !important;
+}
+.accordion-button.no-caret::after,
+.dropdown-toggle.no-caret::after {
+  display: none;
+}
+
+.border-default {
+  border: 0.0625rem solid rgba(231, 234, 243, 0.7) !important;
+}
+
+.btn {
+  font-size: $clamp14;
+}
+
+.btn-default {
+  color: $color7;
+  background: $color2;
+  border: 1px solid $color2;
+
+  &:hover,
+  &:focus {
+    color: $color7;
+    background: $color2;
+    border: 1px solid $color2;
+  }
+}
+
+.btn-outline-default {
+  color: $color2;
+  background: transparent;
+  border: 1px solid $color2;
+
+  &:hover,
+  &:focus {
+    color: $color7;
+    background: $color2;
+    border: 1px solid $color2;
+  }
+}
+
+.btn-theme2 {
+  color: $color5;
+  background: $color3;
+  border: 1px solid $color3;
+
+  &:hover,
+  &:focus {
+    background: $color3;
+    border: 1px solid $color3;
+  }
+}
+
+.btn-outline-theme2 {
+  color: $color3;
+  background: transparent;
+  border: 1px solid $color3;
+
+  &:hover,
+  &:focus {
+    color: $color5;
+    background: $color3;
+    border: 1px solid $color3;
+  }
+}
+
+.shadow-default {
+  box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(34, 30, 41, 0.3);
+}
+
+.shadow-theme-one {
+  box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(20, 216, 230, 0.4);
+}
+
+.shadow-theme-two {
+  box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(247, 86, 112, 0.4);
+}
+
+.verticle-menu {
+  .btn {
+    font-size: $clamp14;
+    border-radius: 3rem;
+  }
+
+  &.btn-group > .btn-group:not(:last-child) > .btn,
+  &.btn-group > .btn.dropdown-toggle-split:first-child,
+  &.btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &.btn-group > .btn-group:not(:first-child) > .btn,
+  &.btn-group > .btn:nth-child(n + 3),
+  &.btn-group > :not(.btn-check) + .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .btn-sm {
+    padding: 0.15rem 0.5rem;
+
+    .option-text {
+      font-size: $clamp14;
+    }
+  }
+
+  .dropdown-menu {
+    border-radius: 0.45rem;
+
+    .dropdown-menu-macos {
+      display: grid;
+      gap: 0.25rem;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      height: 140px;
+      overflow-y: auto;
+
+      .dropdown-item {
+        border-radius: 0.45rem;
+        font-size: $clamp14;
+        padding: 0.45rem 0.65rem;
+
+        &:hover,
+        &.active {
+          color: $color7;
+          background: $color2;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 0.25rem;
+        }
+      }
+    }
+
+    .mCSB_outside + .mCS-minimal-dark.mCSB_scrollTools_vertical,
+    .mCSB_outside + .mCS-minimal.mCSB_scrollTools_vertical {
+      right: -5px;
+    }
+  }
+}
+.search-dropdown-list {
+  .btn {
+    position: relative;
+    font-size: $clamp14;
+    text-align: left;
+    border-radius: 0.25rem;
+    padding: 0.56rem 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: $color7;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+
+    &.dropdown-toggle {
+      &::after {
+        position: absolute;
+        top: 17px;
+        right: 5px;
+      }
+      &.show::after {
+        transform: rotate(-180deg);
+      }
+    }
+
+    .option-text {
+      font-size: $clamp14;
+    }
+  }
+
+  .dropdown-menu {
+    border-radius: 0.45rem;
+    min-width: 16rem;
+
+    .dropdown-menu-macos {
+      display: grid;
+      gap: 0.25rem;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      height: 200px;
+      overflow-y: auto;
+
+      .dropdown-item {
+        border-radius: 0.45rem;
+        font-size: $clamp14;
+        padding: 0.45rem 0.65rem;
+        border: 1px solid #ced4da;
+
+        &:hover,
+        &.active {
+          color: $color7;
+          background: $color2;
+          border: 1px solid $color2;
+          .btn-customer {
+            color: $color2;
+            background: $color7;
+          }
+        }
+        p {
+          font-size: $clamp12;
+        }
+        .btn-customer {
+          font-size: $clamp12;
+          color: $color7;
+          padding: 0.2rem 0.45rem;
+          border-radius: 0.25rem;
+          background: $color2;
+          border: none;
+          line-height: 1.2;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 0.25rem;
+        }
+      }
+    }
+
+    .mCSB_outside + .mCS-minimal-dark.mCSB_scrollTools_vertical,
+    .mCSB_outside + .mCS-minimal.mCSB_scrollTools_vertical {
+      right: -5px;
+    }
+  }
+}
+
+.daterangepicker {
+  border: none;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 0.6125rem 2.5rem 0.6125rem rgba(140, 152, 164, 0.18%);
+  margin-top: 0;
+  border-radius: 0.75rem;
+  z-index: 1015;
+}
+
+/* font-size style*/
+
+.fs {
+  &-10 {
+    font-size: $clamp10 !important;
+  }
+  &-12 {
+    font-size: $clamp12 !important;
+  }
+  &-13 {
+    font-size: $clamp13 !important;
+  }
+  &-14 {
+    font-size: $clamp14 !important;
+  }
+  &-15 {
+    font-size: $clamp15 !important;
+  }
+  &-16 {
+    font-size: $clamp16 !important;
+  }
+  &-18 {
+    font-size: $clamp18 !important;
+  }
+  &-22 {
+    font-size: $clamp22 !important;
+  }
+  &-24 {
+    font-size: $clamp24 !important;
+  }
+  &-26 {
+    font-size: $clamp26 !important;
+  }
+  &-28 {
+    font-size: $clamp28 !important;
+  }
+  &-30 {
+    font-size: $clamp30 !important;
+  }
+  &-36 {
+    font-size: $clamp36 !important;
+  }
+  &-48 {
+    font-size: $clamp48 !important;
+  }
+  &-60 {
+    font-size: $clamp60 !important;
+  }
+  &-72 {
+    font-size: $clamp72 !important;
+  }
+  &-84 {
+    font-size: $clamp84 !important;
+  }
+}
+
+/* custom scrollbar style */
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ced4da;
+}
+
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:focus {
+  background: #ced4da;
+}
+
+.mCSB_outside + .mCS-minimal-dark.mCSB_scrollTools_vertical,
+.mCSB_outside + .mCS-minimal.mCSB_scrollTools_vertical {
+  right: -10px;
+}

@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FCEM - Friendly Customer Experience Management</title>
+    <meta name="msapplication-TileColor" content="#2a3070">
+    <meta name="theme-color" content="#2a3070">
+
+    <!-- bootstrap style -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css'
+        integrity='sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=='
+        crossorigin='anonymous' />
+
+    <!-- malihu-custom-scrollbar style -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
+        integrity="sha512-6qkvBbDyl5TDJtNJiC8foyEVuB6gxMBkrKy67XpqnIDxyvLLPJzmTjAj1dRJfNdmXWqD10VbJoeN4pOQqDwvRA=="
+        crossorigin="anonymous" />
+
+    <!-- daterangepicker style -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <!-- bootstrap-select CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    <!-- app style -->
+    <link rel="stylesheet" href="assets/scss/app.css">
+
+</head>
+
+<body>
+    <!-- start app -->
+    <main class="app">
+        <!-- start asidenavbar -->
+        <aside class="aside-navbar p-2">
+            <a class="navbar-brand text-white" href="home.html">
+                <i class="bi bi-nintendo-switch fs-2 mx-2 text-color-two"></i>
+                <span class="fs-5 ms-2 mb-0 fw-bold">Friendly CEM</span>
+            </a>
+            <div id="aside-bar" class="nav-content">
+                <ul class="nav nav-pills mb-auto py-3">
+                    <li class="nav-item">
+                        <a href="home.html" class="nav-link active" aria-current="page">
+                            <i class="bi bi-house"></i>
+                            <span class="nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-people"></i>
+                            <span class="nav-text">People</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-calendar2-week"></i>
+                            <span class="nav-text">Appointments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="invoices.html" class="nav-link">
+                            <i class="bi bi-newspaper"></i>
+                            <span class="nav-text">Invoices</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-person-plus"></i>
+                            <span class="nav-text">Memberships</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-box2-heart"></i>
+                            <span class="nav-text">Packages</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-bell"></i>
+                            <span class="nav-text">Compaigns</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-emoji-smile"></i>
+                            <span class="nav-text">Cxm</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-file-bar-graph"></i>
+                            <span class="nav-text">Inventory</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-bar-chart"></i>
+                            <span class="nav-text">Reports</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-gear"></i>
+                            <span class="nav-text">Configuration</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-person-circle"></i>
+                            <span class="nav-text">Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="bi bi-question-octagon"></i>
+                            <span class="nav-text">Help</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <!-- end asidenavbar -->
+
+        <!-- start app-wrapper -->
+        <div class="app-wrapper">
+            <div class="overlay"></div>
+            <!-- start header -->
+            <header class="sticky-top">
+                <div class="container-fluid">
+                    <nav class="d-flex flex-wrap justify-content-between">
+                        <button id="sidebarToggle" class="me-md-auto btn btn-link text-color-two p-2 py-0">
+                            <i class="bi bi-list fs-4"></i>
+                        </button>
+                        <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-color-two">
+                                    <i class="bi bi-arrow-clockwise fs-5 fw-bold"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-color-two">
+                                    <i class="bi bi-geo-alt-fill fs-5 fw-bold"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <!-- end header -->
+
+            <!-- start app-wrapper-content -->
+            <div class="app-wrapper-content">
+                <section class="dashboard">
+                    <div class="container-fluid">
+                        <!-- start section-header -->
+                        <div class="section-heading pb-2">
+                            <div class="row g-3 align-items-center">
+                                <div class="col-md-9 col-8">
+                                    <h5 class="mb-0">Dashboard</h5>
+                                    <p class="mb-0">Track how your business is doing! </p>
+                                </div>
+
+                                <!-- start nav-tabs -->
+                                <div class="col-md-3 col-4 dashboard-tabs d-flex justify-content-end">
+                                    <ul class="nav nav-pills d-inline-flex mb-3 bg-white p-1 rounded-pill"
+                                        id="pills-tab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link rounded-pill active" id="management-pill-tab"
+                                                data-bs-toggle="pill" data-bs-target="#management-pill" type="button"
+                                                role="tab" aria-controls="management-pill" aria-selected="true">
+                                                <img src="assets/images/management_id_icon_216424.svg" width="26"
+                                                    height="26" alt="">
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link rounded-pill" id="customer-experience-pill-tab"
+                                                data-bs-toggle="pill" data-bs-target="#customer-experience-pill"
+                                                type="button" role="tab" aria-controls="customer-experience-pill"
+                                                aria-selected="false">
+                                                <img src="assets/images/customer-exprience.svg" width="28" height="26"
+                                                    alt="">
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- end nav-tabs -->
+                            </div>
+                        </div>
+                        <!-- end section-header -->
+
+                        <!-- start tab-content -->
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <!-- start management content -->
+                            <div class="tab-pane fade show active" id="management-pill" role="tabpanel"
+                                aria-labelledby="management-pill-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-12 text-end mt-3 mb-1">
+                                        <div class="verticle-menu btn-group justify-content-end">
+                                            <button
+                                                class="btn btn-outline-default px-2 dropdown-toggle dropdown-toggle-split"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <span class="visually-hidden">Toggle Dropdown</span>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-end shadow border-0 p-0">
+                                                <div class="dropdown-menu-macos">
+                                                    <a class="dropdown-item active" href="#">Enquiry</a>
+                                                    <a class="dropdown-item" href="#">Invoice</a>
+                                                    <a class="dropdown-item" href="#">Appointment</a>
+                                                    <a class="dropdown-item" href="#">Membership</a>
+                                                </div>
+                                            </div>
+                                            <button class="btn px-3 btn-outline-default text-uppercase"
+                                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                                aria-controls="offcanvasRight">New
+                                                Invoice</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-xl-8 col-lg-12">
+                                        <div class="summary-status row g-4 mb-4">
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                <div class="single-card card card-body">
+                                                    <div class="single-card-header">
+                                                        <div class="d-flex align-items-start justify-content-between">
+                                                            <h6 class="mb-0 title">Sales Summary</h6>
+                                                            <div class="verticle-menu">
+                                                                <button type="button" id="select-sales-summary"
+                                                                    class="btn btn-sm btn-outline-default dropdown-toggle rounded-pill"
+                                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <span class="option-text">Today</span>
+                                                                </button>
+                                                                <div
+                                                                    class="dropdown-menu dropdown-menu-end shadow border-0 p-0">
+                                                                    <div
+                                                                        class="dropdown-menu-macos sales-summary-dropdown">
+                                                                        <a class="dropdown-item active"
+                                                                            href="#">Today</a>
+                                                                        <a class="dropdown-item" href="#">Yesterday</a>
+                                                                        <a class="dropdown-item" href="#">Current
+                                                                            Week</a>
+                                                                        <a class="dropdown-item" href="#">Current
+                                                                            Month</a>
+                                                                        <a class="dropdown-item" href="#">Last Week</a>
+                                                                        <a class="dropdown-item" href="#">Last Month</a>
+                                                                        <a class="dropdown-item" href="#">Past 3
+                                                                            Months</a>
+                                                                        <a class="dropdown-item" href="#">All</a>
+                                                                        <a class="dropdown-item" href="#">Custom</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="date-range-text">Date Range - 2021-06-16 </div>
+                                                    </div>
+                                                    <div class="single-card-content text-center py-4">
+                                                        <h5 class="card-title mb-1">₹9,825,00</h5>
+                                                        <p class="card-text">Total Sales Today</p>
+                                                    </div>
+                                                    <div class="single-card-footer">
+                                                        <div class="row mb-0">
+                                                            <div class="col-6">Services</div>
+                                                            <div class="col-6">₹9,030.00</div>
+                                                            <div class="col-6">Products</div>
+                                                            <div class="col-6">₹795.00</div>
+                                                            <div class="col-6">Memberships</div>
+                                                            <div class="col-6">₹0.00</div>
+                                                            <div class="col-6">Package</div>
+                                                            <div class="col-6">₹0.00</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                <div class="single-card card card-body">
+                                                    <div class="single-card-header">
+                                                        <div class="d-flex align-items-start justify-content-between">
+                                                            <h6 class="mb-0 title">Payment Summary</h6>
+                                                            <div class="verticle-menu">
+                                                                <button type="button" id="select-payment-summary"
+                                                                    class="btn btn-sm btn-outline-default dropdown-toggle rounded-pill"
+                                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <span class="option-text">Current Week</span>
+                                                                </button>
+                                                                <div
+                                                                    class="dropdown-menu dropdown-menu-end shadow border-0 p-0">
+                                                                    <div
+                                                                        class="dropdown-menu-macos payment-summary-dropdown">
+                                                                        <a class="dropdown-item" href="#">Today</a>
+                                                                        <a class="dropdown-item" href="#">Yesterday</a>
+                                                                        <a class="dropdown-item active" href="#">Current
+                                                                            Week</a>
+                                                                        <a class="dropdown-item" href="#">Current
+                                                                            Month</a>
+                                                                        <a class="dropdown-item" href="#">Last Week</a>
+                                                                        <a class="dropdown-item" href="#">Last Month</a>
+                                                                        <a class="dropdown-item" href="#">Past 3
+                                                                            Months</a>
+                                                                        <a class="dropdown-item" href="#">All</a>
+                                                                        <a class="dropdown-item" href="#">Custom</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="date-range-text">Date Range - 2021-06-18 </div>
+                                                    </div>
+                                                    <div class="single-card-content text-center py-4">
+                                                        <h5 class="card-title mb-1">₹9,825,00</h5>
+                                                        <p class="card-text">Payment Recieved Today</p>
+                                                    </div>
+                                                    <div class="single-card-footer">
+                                                        <div class="row mb-0">
+                                                            <div class="col-6">Cash</div>
+                                                            <div class="col-6">₹7,345.00</div>
+                                                            <div class="col-6">Online</div>
+                                                            <div class="col-6">₹2,840.00</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="analysis-status row g-4 mb-4">
+                                            <div class="col-xl-4 col-lg-4 col-md-12">
+                                                <div class="single-card card card-body h-100">
+                                                    <div class="single-card-header">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 title">Purchase</h6>
+                                                            <button type="button" class="btn btn-link p-0 text-muted">
+                                                                <i class="bi bi-arrow-clockwise"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="card-text">Track Customers Who Have Purchased From
+                                                            You
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-card-content text-center py-3">
+                                                        <h5 class="card-title">29
+                                                            <span class="text-success">
+                                                                <i class="bi bi-caret-up-fill"></i>(7)
+                                                            </span>
+                                                        </h5>
+                                                        <p class="card-text small">Today</p>
+                                                        <canvas id="purchasechartcanvas"></canvas>
+                                                    </div>
+                                                    <div class="single-card-footer">
+                                                        <div class="row">
+                                                            <div class="col-6">This Week</div>
+                                                            <div class="col-6 text-end">95 <span class="text-danger">
+                                                                    <i class="bi bi-caret-up-fill"></i>(-65)</span>
+                                                            </div>
+                                                            <div class="col-6">This Month</div>
+                                                            <div class="col-6 text-end">399 <span class="text-danger">
+                                                                    <i class="bi bi-caret-up-fill"></i>(-542)</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-4 col-lg-4 col-md-12">
+                                                <div class="single-card card card-body h-100">
+                                                    <div class="single-card-header">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 title">Enquiry</h6>
+                                                            <button type="button" class="btn btn-link p-0 text-muted">
+                                                                <i class="bi bi-arrow-clockwise"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="card-text">Track Customers Who Have Enquired With
+                                                            You</div>
+                                                    </div>
+                                                    <div class="single-card-content text-center py-3">
+                                                        <h5 class="card-title">0
+                                                            <span class="text-success">
+                                                                <i class="bi bi-caret-up-fill"></i>(0)
+                                                            </span>
+                                                        </h5>
+                                                        <p class="card-text small">Today</p>
+                                                        <div id="container"></div>
+                                                    </div>
+                                                    <div class="single-card-footer">
+                                                        <div class="row">
+                                                            <div class="col-6">This Week</div>
+                                                            <div class="col-6 text-end">0 <span class="text-danger">
+                                                                    <i class="bi bi-caret-up-fill"></i>(-0)</span>
+                                                            </div>
+                                                            <div class="col-6">This Month</div>
+                                                            <div class="col-6 text-end">0 <span class="text-danger">
+                                                                    <i class="bi bi-caret-up-fill"></i>(-0)</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-4 col-lg-4 col-md-12">
+                                                <div class="single-card card card-body h-100">
+                                                    <div class="single-card-header">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 title">Package Visit</h6>
+                                                            <button type="button" class="btn btn-link p-0 text-muted">
+                                                                <i class="bi bi-arrow-clockwise"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="card-text">Customers Who Have Visited For Package
+                                                            Services
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-card-content text-center py-3">
+                                                        <h5 class="card-title">0
+                                                            <span class="text-success">
+                                                                <i class="bi bi-caret-up-fill"></i>(0)
+                                                            </span>
+                                                        </h5>
+                                                        <p class="card-text small">Today</p>
+                                                        <div id="container"></div>
+                                                    </div>
+                                                    <div class="single-card-footer">
+                                                        <div class="row">
+                                                            <div class="col-6">This Week</div>
+                                                            <div class="col-6 text-end">0 <span class="text-danger">
+                                                                    <i class="bi bi-caret-up-fill"></i>(-0)</span>
+                                                            </div>
+                                                            <div class="col-6">This Month</div>
+                                                            <div class="col-6 text-end">0 <span class="text-danger">
+                                                                    <i class="bi bi-caret-up-fill"></i>(-0)</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="customers-status row g-4 mb-4">
+                                            <div class="col-12">
+                                                <div class="single-card card card-body">
+                                                    <div class="single-card-header">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 title">Repeat Vs New Customers</h6>
+                                                            <div class="verticle-menu">
+                                                                <button type="button" id="select-customers-status"
+                                                                    class="btn btn-sm btn-outline-default dropdown-toggle rounded-pill"
+                                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <span class="option-text">Yesterday</span>
+                                                                </button>
+                                                                <div
+                                                                    class="dropdown-menu dropdown-menu-end shadow border-0 p-0">
+                                                                    <div
+                                                                        class="dropdown-menu-macos customers-status-dropdown">
+                                                                        <a class="dropdown-item" href="#">Today</a>
+                                                                        <a class="dropdown-item active"
+                                                                            href="#">Yesterday</a>
+                                                                        <a class="dropdown-item" href="#">Current
+                                                                            Week</a>
+                                                                        <a class="dropdown-item" href="#">Current
+                                                                            Month</a>
+                                                                        <a class="dropdown-item" href="#">Last Week</a>
+                                                                        <a class="dropdown-item" href="#">Last Month</a>
+                                                                        <a class="dropdown-item" href="#">Past 3
+                                                                            Months</a>
+                                                                        <a class="dropdown-item" href="#">All</a>
+                                                                        <a class="dropdown-item" href="#">Custom</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="date-range-text">Date Range - 2022-06-16 to
+                                                            2022-06-30
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-card-content py-3">
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="row">
+                                                                    <div class="col-6">Repeat Customers</div>
+                                                                    <div class="col-6 text-end"><span
+                                                                            class="badge rounded-pill bg-color-two">315</span>
+                                                                    </div>
+                                                                    <div class="col-6">New Customers</div>
+                                                                    <div class="col-6 text-end"><span
+                                                                            class="badge rounded-pill bg-secondary">84</span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="content text-center my-4">
+                                                                    <p class="card-text mb-0">Retention Rate</p>
+                                                                    <h5 class="card-title mb-0">78.95%</h5>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6 col-12">
+                                                                <div class="mx-auto" style="height: 150px;">
+                                                                    <canvas id="repeatandcustomerscanvas"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="performance-status row g-4 mb-4">
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                                <div class="single-card card card-body">
+                                                    <div class="single-card-header">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 title">Staff Performance (Top 5)</h6>
+                                                            <div class="verticle-menu">
+                                                                <button type="button" id="select-staff-performance"
+                                                                    class="btn btn-sm btn-outline-default dropdown-toggle rounded-pill"
+                                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <span class="option-text">Today</span>
+                                                                </button>
+                                                                <div
+                                                                    class="dropdown-menu dropdown-menu-end shadow border-0 p-0">
+                                                                    <div
+                                                                        class="dropdown-menu-macos staff-performance-dropdown">
+                                                                        <a class="dropdown-item active"
+                                                                            href="#">Today</a>
+                                                                        <a class="dropdown-item" href="#">Yesterday</a>
+                                                                        <a class="dropdown-item" href="#">Current
+                                                                            Week</a>
+                                                                        <a class="dropdown-item" href="#">Current
+                                                                            Month</a>
+                                                                        <a class="dropdown-item" href="#">Last Week</a>
+                                                                        <a class="dropdown-item" href="#">Last Month</a>
+                                                                        <a class="dropdown-item" href="#">Past 3
+                                                                            Months</a>
+                                                                        <a class="dropdown-item" href="#">All</a>
+                                                                        <a class="dropdown-item" href="#">Custom</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-text">Date Range - 2022-06-16</div>
+                                                    </div>
+                                                    <div class="single-card-content py-3">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="staffPerformanceCheckDefault" checked>
+                                                            <label class="form-check-label"
+                                                                for="staffPerformanceCheckDefault">
+                                                                Show Amount Inclusive Of Tax
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-card-footer">
+                                                        <div class="row">
+                                                            <div class="col-6">Mohd</div>
+                                                            <div class="col-6">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 50%;" aria-valuenow="50"
+                                                                        aria-valuemin="0" aria-valuemax="100">50%</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">Aladin</div>
+                                                            <div class="col-6">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 20%;" aria-valuenow="20"
+                                                                        aria-valuemin="0" aria-valuemax="100">20%</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">Swamy Rajan</div>
+                                                            <div class="col-6">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 35%;" aria-valuenow="35"
+                                                                        aria-valuemin="0" aria-valuemax="100">35%</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">Danish</div>
+                                                            <div class="col-6">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 60%;" aria-valuenow="60"
+                                                                        aria-valuemin="0" aria-valuemax="100">60%</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">Arhan</div>
+                                                            <div class="col-6">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 100%;" aria-valuenow="100"
+                                                                        aria-valuemin="0" aria-valuemax="100">100%</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-end mt-3">
+                                                        <a href="http://"
+                                                            class="text-color-two text-decoration-none">More
+                                                            Explore</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                                <div class="single-card card card-body">
+                                                    <div class="single-card-header">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 title">Service Performance (Top 5)</h6>
+                                                            <div class="verticle-menu">
+                                                                <button type="button" id="select-service-performance"
+                                                                    class="btn btn-sm btn-outline-default dropdown-toggle rounded-pill"
+                                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                                    <span class="option-text">Last Month</span>
+                                                                </button>
+                                                                <div
+                                                                    class="dropdown-menu dropdown-menu-end shadow border-0 p-0">
+                                                                    <div
+                                                                        class="dropdown-menu-macos service-performance-dropdown">
+                                                                        <a class="dropdown-item" href="#">Today</a>
+                                                                        <a class="dropdown-item" href="#">Yesterday</a>
+                                                                        <a class="dropdown-item" href="#">Current
+                                                                            Week</a>
+                                                                        <a class="dropdown-item" href="#">Current
+                                                                            Month</a>
+                                                                        <a class="dropdown-item" href="#">Last Week</a>
+                                                                        <a class="dropdown-item" href="#">Last Month</a>
+                                                                        <a class="dropdown-item active" href="#">Past 3
+                                                                            Months</a>
+                                                                        <a class="dropdown-item" href="#">All</a>
+                                                                        <a class="dropdown-item" href="#">Custom</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-text">Date Range - 2022-06-16</div>
+                                                    </div>
+                                                    <div class="single-card-content py-3">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value=""
+                                                                id="ServicePerformanceCheckDefault" checked>
+                                                            <label class="form-check-label"
+                                                                for="ServicePerformanceCheckDefault">
+                                                                Show Amount Inclusive Of Tax
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="single-card-footer">
+                                                        <div class="row">
+                                                            <div class="col-6">Raghu Veer</div>
+                                                            <div class="col-6">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 50%;" aria-valuenow="50"
+                                                                        aria-valuemin="0" aria-valuemax="100">50%</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">Veerabhadra</div>
+                                                            <div class="col-6">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 20%;" aria-valuenow="20"
+                                                                        aria-valuemin="0" aria-valuemax="100">20%</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">Rajan</div>
+                                                            <div class="col-6">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 35%;" aria-valuenow="35"
+                                                                        aria-valuemin="0" aria-valuemax="100">35%</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">Danish</div>
+                                                            <div class="col-6">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 60%;" aria-valuenow="60"
+                                                                        aria-valuemin="0" aria-valuemax="100">60%</div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">Aqsa Khan</div>
+                                                            <div class="col-6">
+                                                                <div class="progress">
+                                                                    <div class="progress-bar" role="progressbar"
+                                                                        style="width: 80%;" aria-valuenow="80"
+                                                                        aria-valuemin="0" aria-valuemax="80">80%</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-end mt-3">
+                                                        <a href="http://"
+                                                            class="text-color-two text-decoration-none">More
+                                                            Explore</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="notification-status row g-4 mb-4">
+                                            <div class="col-xl-6 col-lg-6 col-md-12">
+                                                <div class="single-card card card-body">
+                                                    <div class="single-card-header">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 title">Notification Summary</h6>
+                                                            <button type="button" class="btn btn-link p-0 text-muted"><i
+                                                                    class="bi bi-arrow-clockwise"></i></button>
+                                                        </div>
+                                                        <div class="card-text">Track Campaign(s) Executed Today </div>
+                                                    </div>
+                                                    <div class="single-card-content py-4">
+                                                        <ul class="list-unstyled m-0 p-0">
+                                                            <li
+                                                                class="d-sm-flex align-items-center justify-content-sm-between">
+                                                                <div
+                                                                    class="d-flex align-items-center left-text mb-2 mb-sm-0">
+                                                                    <div class="icon">
+                                                                        <i class="bi bi-bell-fill text-color-two"></i>
+                                                                    </div>
+                                                                    <span class="ms-2">Service Reminder 25-days</span>
+                                                                </div>
+                                                                <button
+                                                                    class="btn-outline-default rounded-3 position-relative">
+                                                                    <small>Customers</small>
+                                                                    <span
+                                                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                                                        16
+                                                                    </span>
+                                                                </button>
+                                                            </li>
+                                                            <li
+                                                                class="d-sm-flex align-items-center justify-content-sm-between">
+                                                                <div
+                                                                    class="d-flex align-items-center left-text mb-2 mb-sm-0">
+                                                                    <div class="icon">
+                                                                        <i class="bi bi-bell-fill text-color-two"></i>
+                                                                    </div>
+                                                                    <span class="ms-2">Appointment Customer
+                                                                        Reminder</span>
+                                                                </div>
+                                                                <button
+                                                                    class="btn-outline-default rounded-3 position-relative">
+                                                                    <small>Customers</small>
+                                                                    <span
+                                                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                                                        2
+                                                                    </span>
+                                                                </button>
+                                                            </li>
+                                                            <li
+                                                                class="d-sm-flex align-items-center justify-content-sm-between">
+                                                                <div
+                                                                    class="d-flex align-items-center left-text mb-2 mb-sm-0">
+                                                                    <div class="icon">
+                                                                        <i class="bi bi-bell-fill text-color-two"></i>
+                                                                    </div>
+                                                                    <span class="ms-2">Invoke</span>
+                                                                </div>
+                                                                <button
+                                                                    class="btn-outline-default rounded-3 position-relative">
+                                                                    <small>Customers</small>
+                                                                    <span
+                                                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
+                                                                        29
+                                                                    </span>
+                                                                </button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div
+                                                        class="single-card-footer d-flex align-items-center justify-content-between">
+                                                        <button class="btn btn-sm btn-default rounded-pill">
+                                                            <i class="bi bi-plus"></i> Create New</button>
+                                                        <a href="http://"
+                                                            class="small text-color-two text-decoration-none">
+                                                            Explore More
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4 col-lg-12">
+                                        <div class="appointments-status sticky-top">
+                                            <div class="card card-body">
+                                                <div class="content">
+                                                    <h6 class="mb-0 title">Appointments</h6>
+                                                    <div class="form-group mt-2">
+                                                        <input type="text" class="form-control form-control-sm"
+                                                            id="selectAppointmentDate" placeholder="14-06-2022">
+                                                    </div>
+                                                </div>
+                                                <div class="list-title my-4">List of appointment -
+                                                    <span class="badge bg-color-two">02</span>
+                                                </div>
+                                                <ul class="list-unstyled appointments-list">
+                                                    <li class="row">
+                                                        <div class="col-12 py-3">
+                                                            <div class="d-flex align-items-start">
+                                                                <div class="icon">
+                                                                    <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                        alt="img" class="thumbnail rounded-circle"
+                                                                        width="40" height="40">
+                                                                </div>
+                                                                <div class="content ms-2">
+                                                                    <div class="row">
+                                                                        <div class="col-12 name fw-bold">Syed Ahmed
+                                                                        </div>
+                                                                        <div class="col-6 mobile">7993614743</div>
+                                                                        <div class="col-6 time">10:00 PM</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="row pt-2 dashed-top align-items-center">
+                                                                <div class="col-6 billvalue">Bill: <span>₹795.00</span>
+                                                                </div>
+                                                                <div class="col-6 status text-end">
+                                                                    <button
+                                                                        class="btn btn-sm btn-default px-3 rounded-pill"><small>Pending</small></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="row">
+                                                        <div class="col-12 py-3">
+                                                            <div class="d-flex align-items-start">
+                                                                <div class="icon">
+                                                                    <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                        alt="img" class="thumbnail rounded-circle"
+                                                                        width="40" height="40">
+                                                                </div>
+                                                                <div class="content ms-2">
+                                                                    <div class="row">
+                                                                        <div class="col-12 name fw-bold">Swamy Sam</div>
+                                                                        <div class="col-6 mobile">1234567890</div>
+                                                                        <div class="col-6 time">02:00 PM</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="row pt-2 dashed-top align-items-center">
+                                                                <div class="col-6 billvalue">Bill: <span>₹820.00</span>
+                                                                </div>
+                                                                <div class="col-6 status text-end">
+                                                                    <button
+                                                                        class="btn btn-sm btn-outline-default px-3 rounded-pill"><small>Confirmed</small></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+
+                                                <!-- No appointments-list show this code -->
+                                                <div class="no-appointments-list">
+                                                    <p class="mb-2">No Appointment Present!</p>
+                                                    <h6 class="mb-0">Appointment(s) are not present for selected date
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end management content -->
+
+                            <!-- start customer-experience content -->
+                            <div class="tab-pane fade" id="customer-experience-pill" role="tabpanel"
+                                aria-labelledby="customer-experience-pill-tab" tabindex="0">
+                                <div class="row mt-3">
+                                    <div class="col-lg-7 col-md-12 col-sm-12">
+                                        <div class="card performance-card mb-3">
+                                            <div class="card-header pt-3 border-0">
+                                                <div class="d-flex align-items-start justify-content-between">
+                                                    <h6 class="card-title">Performance</h6>
+                                                    <button class="btn btn-link p-0">
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </button>
+                                                </div>
+                                                <p class="card-text">Overall performance for recent 180 days</p>
+                                            </div>
+                                            <div class="card-body pt-2">
+                                                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                    <li class="nav-item" role="presentation">
+                                                        <a class="nav-link active" id="pills-recent-tab"
+                                                            data-bs-toggle="pill" data-bs-target="#pills-recent"
+                                                            role="tab" aria-controls="pills-recent"
+                                                            aria-selected="true">Recent</a>
+                                                    </li>
+                                                    <li class="nav-item" role="presentation">
+                                                        <a class="nav-link" id="pills-overall-tab" data-bs-toggle="pill"
+                                                            data-bs-target="#pills-overall" role="tab"
+                                                            aria-controls="pills-overall"
+                                                            aria-selected="false">Overall</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content" id="performance-tabContent">
+                                                    <div class="tab-pane fade show active" id="pills-recent"
+                                                        role="tabpanel" aria-labelledby="pills-recent-tab">
+                                                        <div class="row">
+                                                            <div class="col-lg-5 col-md-12 col-sm-12">
+                                                                <div
+                                                                    class="h-100 d-flex flex-column align-items-center justify-content-center">
+                                                                    <h2 class="rating">4.50</h2>
+                                                                    <ul class="list-inline mb-0">
+                                                                        <li class="list-inline-item">
+                                                                            <a href="#">
+                                                                                <i class="bi bi-star-fill"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <a href="#">
+                                                                                <i class="bi bi-star-fill"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <a href="#">
+                                                                                <i class="bi bi-star-fill"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <a href="#">
+                                                                                <i class="bi bi-star-fill"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <a href="#">
+                                                                                <i class="bi bi-star-half"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <p class="review-text">
+                                                                        <a href="http://"
+                                                                            class="text-muted text-decoration-none">15
+                                                                            Reviews</a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-12 col-sm-12">
+                                                                <div class="mx-auto" style="height: 180px;">
+                                                                    <canvas id="performance_recent_tab"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12 text-end pt-3">
+                                                                <a href="http://"
+                                                                    class="text-color-two text-decoration-none">
+                                                                    More Explore</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="pills-overall" role="tabpanel"
+                                                        aria-labelledby="pills-overall-tab">
+                                                        <div class="row">
+                                                            <div class="col-lg-5 col-md-12 col-sm-12">
+                                                                <div
+                                                                    class="h-100 d-flex flex-column align-items-center justify-content-center">
+                                                                    <h2 class="rating">4.50</h2>
+                                                                    <ul class="list-inline mb-0">
+                                                                        <li class="list-inline-item">
+                                                                            <a href="#">
+                                                                                <i class="bi bi-star-fill"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <a href="#">
+                                                                                <i class="bi bi-star-fill"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <a href="#">
+                                                                                <i class="bi bi-star-fill"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <a href="#">
+                                                                                <i class="bi bi-star-fill"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="list-inline-item">
+                                                                            <a href="#">
+                                                                                <i class="bi bi-star-half"></i>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <p class="review-text">
+                                                                        <a href="http://"
+                                                                            class="text-muted text-decoration-none">20
+                                                                            Reviews</a>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-12 col-sm-12">
+                                                                <div class="mx-auto" style="height: 180px;">
+                                                                    <canvas id="performance_overall_tab"></canvas>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12 text-end pt-3">
+                                                                <a href="http://"
+                                                                    class="text-color-two text-decoration-none">
+                                                                    More Explore</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card reviewsentiment-card mb-3">
+                                            <div class="card-header pt-3 border-0">
+                                                <div class="d-flex align-items-start justify-content-between">
+                                                    <h6 class="card-title">Reviews Sentiment</h6>
+                                                    <button class="btn btn-link p-0">
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </button>
+                                                </div>
+                                                <p class="card-text">Trends for 180 days (Jun 21, 2022 to Jun 22, 2022)
+                                                </p>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="mx-auto" style="height: 150px;">
+                                                    <canvas id="reviewsentiment"></canvas>
+                                                </div>
+                                                <div class="text-end pt-3">
+                                                    <a href="http://" class="text-color-two text-decoration-none">
+                                                        More Explore</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card rra-card mb-3">
+                                            <div class="card-header pt-3 border-0">
+                                                <div class="d-flex align-items-start justify-content-between">
+                                                    <h6 class="card-title">Reviews Reply analysis</h6>
+                                                    <button class="btn btn-link p-0">
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </button>
+                                                </div>
+                                                <p class="card-text">Trends for 180 days (Jun 21, 2022 to Jun 22, 2022)
+                                                </p>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="mx-auto" style="height: 250px;">
+                                                    <canvas id="stackedbarchartcanvas"></canvas>
+                                                </div>
+                                                <div class="text-end pt-3">
+                                                    <a href="http://" class="text-color-two text-decoration-none">
+                                                        More Explore</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card rating-trands-card mb-3">
+                                            <div class="card-header pt-3 border-0">
+                                                <div class="d-flex align-items-start justify-content-between">
+                                                    <h6 class="card-title">Rating Trands</h6>
+                                                    <button class="btn btn-link p-0">
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </button>
+                                                </div>
+                                                <p class="card-text">Trends for 180 days (Jun 21, 2022 to Jun 22, 2022)
+                                                </p>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <canvas id="ratingtrandschartcanvas"></canvas>
+                                                </div>
+                                                <div class="text-end pt-3">
+                                                    <a href="http://" class="text-color-two text-decoration-none">
+                                                        More Explore</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-12 col-sm-12">
+                                        <div class="card review-rating-source mb-4">
+                                            <div class="card-header pt-3 border-0">
+                                                <h6 class="card-title">Reviews &amp; Rating Source</h6>
+                                                <p class="card-text">Online reputation of your business</p>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul class="list-unstyled">
+                                                    <li class="row align-items-center">
+                                                        <div class="col-7">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="icon">
+                                                                    <i class="bi bi-google fs-3 text-danger"></i>
+                                                                </div>
+                                                                <div class="content ms-2">
+                                                                    <h6 class="mb-0">Google</h6>
+                                                                    <p class="mb-0">396 Reviews</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-5 text-end">
+                                                            <button
+                                                                class="btn btn-sm btn-outline-default rounded-pill">4.3
+                                                                <i class="bi bi-star-fill"></i>
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                    <li class="row align-items-center">
+                                                        <div class="col-7">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="icon">
+                                                                    <i class="bi bi-facebook fs-3 text-primary"></i>
+                                                                </div>
+                                                                <div class="content ms-2">
+                                                                    <h6 class="mb-0">Facebook</h6>
+                                                                    <p class="mb-0">(No Data)</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-5 text-end">
+                                                            <button class="btn btn-sm btn-outline-default rounded-pill">
+                                                                <i class="bi bi-link"></i> Connect
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                    <li class="row align-items-center">
+                                                        <div class="col-7">
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="icon">
+                                                                    <i
+                                                                        class="bi bi-nintendo-switch text-color-two fs-3"></i>
+                                                                </div>
+                                                                <div class="content ms-2">
+                                                                    <h6 class="mb-0">Friendknows</h6>
+                                                                    <p class="mb-0">(No Data)</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-5 text-end">
+                                                            <button class="btn btn-sm btn-outline-default rounded-pill">
+                                                                <i class="bi bi-link"></i> Connect
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card customer-insights mb-4">
+                                            <div class="card-header pt-3 border-0">
+                                                <h6 class="card-title">Customer Insights</h6>
+                                                <p class="card-text">Trends for 180 days (Jun 21, 2022 to Jun 22, 2022)
+                                                </p>
+                                            </div>
+                                            <div class="card-body">
+                                                <ul class="nav nav-pills nav-justified mb-3" id="pills-tab"
+                                                    role="tablist">
+                                                    <li class="nav-item" role="presentation">
+                                                        <button class="nav-link active" id="pills-keywords-tab"
+                                                            data-bs-toggle="pill" data-bs-target="#pills-keywords"
+                                                            type="button" role="tab" aria-controls="pills-keywords"
+                                                            aria-selected="true">Keywords</button>
+                                                    </li>
+                                                    <li class="nav-item" role="presentation">
+                                                        <button class="nav-link" id="pills-adjective-tab"
+                                                            data-bs-toggle="pill" data-bs-target="#pills-adjective"
+                                                            type="button" role="tab" aria-controls="pills-adjective"
+                                                            aria-selected="false">Adjective</button>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content" id="pills-tabContent">
+                                                    <div class="tab-pane fade show active" id="pills-keywords"
+                                                        role="tabpanel" aria-labelledby="pills-keywords-tab"
+                                                        tabindex="0">
+                                                        <table class="table table-borderless">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th class="text-muted">1</th>
+                                                                    <td class="fw-bold w-50">Best</td>
+                                                                    <td>2 <span class="text-muted">mention(s)</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="text-muted">2</th>
+                                                                    <td class="fw-bold w-50">Original</td>
+                                                                    <td>1 <span class="text-muted">mention(s)</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="text-muted">3</th>
+                                                                    <td class="fw-bold w-50">Good</td>
+                                                                    <td>1 <span class="text-muted">mention(s)</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="text-end mt-4">
+                                                            <a href="http://"
+                                                                class="text-color-two text-decoration-none">
+                                                                Explore More
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="pills-adjective" role="tabpanel"
+                                                        aria-labelledby="pills-adjective-tab" tabindex="0">
+                                                        <table class="table table-borderless">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th class="text-muted">1</th>
+                                                                    <td class="fw-bold w-50">Best</td>
+                                                                    <td>2 <span class="text-muted">mention(s)</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="text-muted">2</th>
+                                                                    <td class="fw-bold w-50">Original</td>
+                                                                    <td>5 <span class="text-muted">mention(s)</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th class="text-muted">3</th>
+                                                                    <td class="fw-bold w-50">Good</td>
+                                                                    <td>3 <span class="text-muted">mention(s)</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="text-end mt-4">
+                                                            <a href="http://"
+                                                                class="text-color-two text-decoration-none">
+                                                                Explore More
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end customer-experience content -->
+                        </div>
+                        <!-- end tab-content -->
+                    </div>
+                </section>
+
+                <div class="offcanvas offcanvas-end invoice-offcanvas" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header bg-white shadow-sm justify-content-start px-2">
+                        <button type="button" class="btn-close me-2" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Create Invoice</h5>
+                    </div>
+                    <div class="offcanvas-body px-0">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-12">
+                                    <ul class="list-unstyled invoice-lists">
+                                        <li class="row row-cols-2">
+                                            <div class="col-auto">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    Items
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="row">
+                                            <div class="col-auto">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault2">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card card-body">
+                                                    <div class="header me-2">
+                                                        <div class="content me-2">
+                                                            <h6>Service</h6>
+                                                            <h6>₹0.00</h6>
+                                                        </div>
+                                                        <a href="#" class="delete">
+                                                            <i class="bi bi-x-circle text-danger"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="search-dropdown-list">
+                                                        <button type="button" id="offcanvas_customer_details"
+                                                            class="btn bg-transparent border-0 no-caret p-0 shadow-none dropdown-toggle"
+                                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <span class="option-text">Search Item</span>
+                                                        </button>
+                                                        <div
+                                                            class="dropdown-menu offcanvas_customer_dropdown shadow border-0 p-0">
+                                                            <div class="dropdown-menu-macos">
+                                                                <div class="dropdown-item d-flex align-items-start">
+                                                                    <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                        alt="avater" class="thumbnail rounded-circle"
+                                                                        width="40" height="40">
+                                                                    <div class="content ms-2">
+                                                                        <h6 class="mb-0 title text-truncate">Customer 1
+                                                                        </h6>
+                                                                        <p class="mb-0 opacity">9123456780</p>
+                                                                        <div class="btn-customer">customer</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item d-flex align-items-start">
+                                                                    <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                        alt="avater" class="thumbnail rounded-circle"
+                                                                        width="40" height="40">
+                                                                    <div class="content ms-2">
+                                                                        <h6 class="mb-0 title text-truncate">Customer 2
+                                                                        </h6>
+                                                                        <p class="mb-0 opacity">9123456780</p>
+                                                                        <div class="btn-customer">customer</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item d-flex align-items-start">
+                                                                    <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                        alt="avater" class="thumbnail rounded-circle"
+                                                                        width="40" height="40">
+                                                                    <div class="content ms-2">
+                                                                        <h6 class="mb-0 title text-truncate">Customer 3
+                                                                        </h6>
+                                                                        <p class="mb-0 opacity">9123456780</p>
+                                                                        <div class="btn-customer">customer</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item d-flex align-items-start">
+                                                                    <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                        alt="avater" class="thumbnail rounded-circle"
+                                                                        width="40" height="40">
+                                                                    <div class="content ms-2">
+                                                                        <h6 class="mb-0 title text-truncate">Customer 4
+                                                                        </h6>
+                                                                        <p class="mb-0 opacity">9123456780</p>
+                                                                        <div class="btn-customer">customer</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item d-flex align-items-start">
+                                                                    <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                        alt="avater" class="thumbnail rounded-circle"
+                                                                        width="40" height="40">
+                                                                    <div class="content ms-2">
+                                                                        <h6 class="mb-0 title text-truncate">Customer 5
+                                                                        </h6>
+                                                                        <p class="mb-0 opacity">9123456780</p>
+                                                                        <div class="btn-customer">customer</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropdown-item d-flex align-items-start">
+                                                                    <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                        alt="avater" class="thumbnail rounded-circle"
+                                                                        width="40" height="40">
+                                                                    <div class="content ms-2">
+                                                                        <h6 class="mb-0 title text-truncate">Customer 6
+                                                                        </h6>
+                                                                        <p class="mb-0 opacity">9123456780</p>
+                                                                        <div class="btn-customer">customer</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="total-status p-3">
+                                        <div class="row">
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14">Sub Total</h6>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14 fw-normal">₹4150.00</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14">Discount</h6>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14 fw-normal">(-) ₹1500.00</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14">Rounding</h6>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14 fw-normal">₹0.00</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14">Grand Total</h6>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14 fw-normal">₹2650.00</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14">Amount Paid</h6>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14 fw-normal">₹2500.00</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14">Balance</h6>
+                                            </div>
+                                            <div class="col-6 text-end">
+                                                <h6 class="fs-14 fw-normal text-danger">₹150.00</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body py-0 invoice-lists-shotcuts">
+                                        <ul class="list-inline m-0 p-0">
+                                            <li class="list-inline-item">
+                                                <a href="#"><i class="bi bi-plus"></i> Services</a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#"><i class="bi bi-plus"></i> Product</a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#"><i class="bi bi-plus"></i> Package</a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#"><i class="bi bi-plus"></i> Bulk Items</a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <a href="#"><i class="bi bi-pencil"></i> Update</a>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-default rounded-pill" href="#">Create</button>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-default rounded-pill" href="#">Create &amp;
+                                                    Print</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-12">
+                                    <div class="credit-details shadow-sm rounded-3">
+                                        <ul class="list-unstyled m-2 p-0">
+                                            <li class="card border-0 bg-transparent">
+                                                <div class="card-header bg-transparent border-0">
+                                                    <a class="text-decoration-none text-dark p-0 fs-14"
+                                                        data-bs-toggle="collapse" href="#collapseOne" role="button"
+                                                        aria-expanded="false" aria-controls="collapseOne">
+                                                        <h6 class="opacity-50 fw-normal">Current SMS Credits <span
+                                                                class="title">4583</span></h6>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseOne" class="card-body bg-transparent collapse show">
+                                                    <div class="row my-3 row-cols-2 align-items-center">
+                                                        <div class="col">
+                                                            <h6 class="title small text-uppercase mb-0">Status
+                                                            </h6>
+                                                        </div>
+                                                        <div class="col">
+                                                            <select class="form-select form-select-sm"
+                                                                aria-label="Default select example">
+                                                                <option selected>Select Status</option>
+                                                                <option value="1">Due</option>
+                                                                <option value="2">Paid</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row my-3 row-cols-2 align-items-center">
+                                                        <div class="col">
+                                                            <h6 class="title small text-uppercase mb-0">Invoice
+                                                                Date
+                                                            </h6>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control form-control-sm"
+                                                                    id="selectInvoiceDate" placeholder="14-06-2022">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="card border-0 bg-transparent">
+                                                <div class="card-header bg-transparent border-0">
+                                                    <a class="text-decoration-none text-dark p-0 fs-14"
+                                                        data-bs-toggle="collapse" href="#collapseTwo" role="button"
+                                                        aria-expanded="false" aria-controls="collapseTwo">
+                                                        <h6 class="opacity-50 fw-normal">Customer Details</h6>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseTwo" class="card-body bg-transparent collapse show">
+                                                    <form action="">
+                                                        <div class="row">
+                                                            <div class="col-9 form-group">
+                                                                <label for="inputName"
+                                                                    class="form-label d-flex align-items-center"><span>Name</span>
+                                                                    <i
+                                                                        class="bi bi-star-fill fs-10 ms-1 text-color-three"></i></label>
+                                                                <div class="search-dropdown-list">
+                                                                    <button type="button"
+                                                                        id="offcanvas_customer_details"
+                                                                        class="btn w-100 dropdown-toggle"
+                                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        <span class="option-text">Search
+                                                                            details</span>
+                                                                    </button>
+                                                                    <div
+                                                                        class="dropdown-menu offcanvas_customer_dropdown shadow border-0 p-0">
+                                                                        <div class="dropdown-menu-macos">
+                                                                            <div
+                                                                                class="dropdown-item d-flex align-items-start">
+                                                                                <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                                    alt="avater"
+                                                                                    class="thumbnail rounded-circle"
+                                                                                    width="40" height="40">
+                                                                                <div class="content ms-2">
+                                                                                    <h6
+                                                                                        class="mb-0 title text-truncate">
+                                                                                        Customer 1</h6>
+                                                                                    <p class="mb-0 opacity">
+                                                                                        9123456780</p>
+                                                                                    <div class="btn-customer">
+                                                                                        customer</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="dropdown-item d-flex align-items-start">
+                                                                                <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                                    alt="avater"
+                                                                                    class="thumbnail rounded-circle"
+                                                                                    width="40" height="40">
+                                                                                <div class="content ms-2">
+                                                                                    <h6
+                                                                                        class="mb-0 title text-truncate">
+                                                                                        Customer 2</h6>
+                                                                                    <p class="mb-0 opacity">
+                                                                                        9123456780</p>
+                                                                                    <div class="btn-customer">
+                                                                                        customer</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="dropdown-item d-flex align-items-start">
+                                                                                <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                                    alt="avater"
+                                                                                    class="thumbnail rounded-circle"
+                                                                                    width="40" height="40">
+                                                                                <div class="content ms-2">
+                                                                                    <h6
+                                                                                        class="mb-0 title text-truncate">
+                                                                                        Customer 3</h6>
+                                                                                    <p class="mb-0 opacity">
+                                                                                        9123456780</p>
+                                                                                    <div class="btn-customer">
+                                                                                        customer</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="dropdown-item d-flex align-items-start">
+                                                                                <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                                    alt="avater"
+                                                                                    class="thumbnail rounded-circle"
+                                                                                    width="40" height="40">
+                                                                                <div class="content ms-2">
+                                                                                    <h6
+                                                                                        class="mb-0 title text-truncate">
+                                                                                        Customer 4</h6>
+                                                                                    <p class="mb-0 opacity">
+                                                                                        9123456780</p>
+                                                                                    <div class="btn-customer">
+                                                                                        customer</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="dropdown-item d-flex align-items-start">
+                                                                                <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                                    alt="avater"
+                                                                                    class="thumbnail rounded-circle"
+                                                                                    width="40" height="40">
+                                                                                <div class="content ms-2">
+                                                                                    <h6
+                                                                                        class="mb-0 title text-truncate">
+                                                                                        Customer 5</h6>
+                                                                                    <p class="mb-0 opacity">
+                                                                                        9123456780</p>
+                                                                                    <div class="btn-customer">
+                                                                                        customer</div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div
+                                                                                class="dropdown-item d-flex align-items-start">
+                                                                                <img src="https://www.samconveyancing.co.uk/userfiles/images/M1-dfhg3a.png"
+                                                                                    alt="avater"
+                                                                                    class="thumbnail rounded-circle"
+                                                                                    width="40" height="40">
+                                                                                <div class="content ms-2">
+                                                                                    <h6
+                                                                                        class="mb-0 title text-truncate">
+                                                                                        Customer 6</h6>
+                                                                                    <p class="mb-0 opacity">
+                                                                                        9123456780</p>
+                                                                                    <div class="btn-customer">
+                                                                                        customer</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <div class="joins-btns mt-4 pt-1">
+                                                                    <button class="btn text-success p-0"><i
+                                                                            class="bi bi-plus fs-4"></i></button>
+                                                                    <button class="btn text-danger p-0 ms-2"><i
+                                                                            class="bi bi-trash fs-5"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-4">
+                                                            <div class="col-9 form-group mb-3">
+                                                                <label for="inputmobilenote"
+                                                                    class="form-label d-flex align-items-center"><span>Phone
+                                                                        Number</span>
+                                                                    <i
+                                                                        class="bi bi-star-fill fs-10 ms-1 text-color-three"></i></label>
+                                                                <input type="text" class="form-control"
+                                                                    id="mobileNumber">
+                                                            </div>
+                                                            <div class="col-12 form-group mb-3">
+                                                                <label for="inputName"
+                                                                    class="form-label d-flex align-items-center"><span>Gender</span>
+                                                                    <i
+                                                                        class="bi bi-star-fill fs-10 ms-1 mb-1 text-color-three"></i></label>
+                                                                <div class="list-group list-group-checkable flex-row">
+                                                                    <input class="list-group-item-check" type="radio"
+                                                                        name="listGroupCheckableRadios" id="Male"
+                                                                        value="" checked>
+                                                                    <label class="list-group-item mx-1 rounded-pill"
+                                                                        for="Male">
+                                                                        Male
+                                                                    </label>
+
+                                                                    <input class="list-group-item-check" type="radio"
+                                                                        name="listGroupCheckableRadios" id="FeMale"
+                                                                        value="">
+                                                                    <label class="list-group-item mx-1 rounded-pill"
+                                                                        for="FeMale">
+                                                                        Female
+                                                                    </label>
+
+                                                                    <input class="list-group-item-check" type="radio"
+                                                                        name="listGroupCheckableRadios" id="Others"
+                                                                        value="">
+                                                                    <label class="list-group-item mx-1 rounded-pill"
+                                                                        for="Others">
+                                                                        Others
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </li>
+                                            <li class="card border-0 bg-transparent">
+                                                <div class="card-header bg-transparent border-0">
+                                                    <a class="text-decoration-none text-dark p-0 fs-14"
+                                                        data-bs-toggle="modal" href="#collapseThree" role="button"
+                                                        aria-expanded="false" aria-controls="collapseThree">
+                                                        <h6 class="opacity-50 fw-normal">SMS &amp; Emails options</h6>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="card border-0 bg-transparent">
+                                                <div class="card-header bg-transparent border-0">
+                                                    <a class="text-decoration-none text-dark p-0 fs-14"
+                                                        data-bs-toggle="collapse" href="#collapseFour" role="button"
+                                                        aria-expanded="false" aria-controls="collapseFour">
+                                                        <h6 class="opacity-50 fw-normal">Customer History</h6>
+                                                    </a>
+                                                </div>
+                                                <div id="collapseFour" class="card-body bg-transparent collapse show">
+                                                    <div>
+                                                        <strong>This is the first item's accordion body.</strong> It
+                                                        is shown by default, until the collapse plugin adds the
+                                                        appropriate classes that we use to style each element. These
+                                                        classes control the overall appearance, as well as the
+                                                        showing and hiding via CSS transitions. You can modify any
+                                                        of this with custom CSS or overriding our default variables.
+                                                        It's also worth noting that just about any HTML can go
+                                                        within the <code>.accordion-body</code>, though the
+                                                        transition does limit overflow.
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end app-wrapper-content -->
+
+            <!-- start footer -->
+            <div class="footer-copyright py-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="text-muted text-center">
+                                Copyright &copy; 2022 All Rights Reserved By
+                                <a href="http://" class="text-color-two text-decoration-none">FCEM</a> and
+                                <a href="http://" class="text-color-two text-decoration-none">Version: 0.0.1</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end footer -->
+        </div>
+        <!-- end app-wrapper -->
+
+        <!-- SMS & Emails options Modal -->
+        <div class="modal fade" id="collapseThree" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-sm modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Invoice Options</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body py-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="SMSEmailsoptions1" checked>
+                            <label class="form-check-label" for="SMSEmailsoptions1">
+                                Send SMS
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="SMSEmailsoptions2" checked>
+                            <label class="form-check-label" for="SMSEmailsoptions2">
+                                Send Email
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="SMSEmailsoptions3" checked>
+                            <label class="form-check-label" for="SMSEmailsoptions3">
+                                Send Reviews Invite
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-default rounded-pill"
+                            data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-default rounded-pill"
+                            data-bs-dismiss="modal">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <!-- end app -->
+
+    <!-- jquery.js -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+        integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=='
+        crossorigin='anonymous'></script>
+
+    <!-- bootstrap.js -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js'
+        integrity='sha512-pax4MlgXjHEPfCwcJLQhigY7+N8rt6bVvWLFyUMuxShv170X53TRzGPmPkZmGBhk+jikR8WBM4yl7A9WMHHqvg=='
+        crossorigin='anonymous'></script>
+
+    <!-- bootstrap-select -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- malihu-custom-scrollbar.js -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"
+        integrity="sha512-Yk47FuYNtuINE1w+t/KT4BQ7JaycTCcrvlSvdK/jry6Kcxqg5vN7/svVWCxZykVzzJHaxXk5T9jnFemZHSYgnw=="
+        crossorigin="anonymous"></script>
+
+    <!-- daterangepicker.js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"
+        integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg=="
+        crossorigin="anonymous"></script>
+
+    <!-- custom.js -->
+    <script src="assets/js/custom-chartjs.js"></script>
+    <script src="assets/js/app.js"></script>
+
+
+</body>
+
+</html>

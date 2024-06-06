@@ -1,0 +1,36 @@
+:root {
+    // global color variables
+    --#{fcem-color1}: #{$color1};
+    --#{fcem-color2}: #{$color2};
+    --#{fcem-color3}: #{$color3};
+    --#{fcem-color4}: #{$color4};
+    --#{fcem-color5}: #{$color5};
+    --#{fcem-color6}: #{$color6};
+    --#{fcem-color7}: #{$color7};
+    --#{fcem-color8}: #{$color8};
+    --#{fcem-bg-active}: #{$bg-active};
+
+    // global font-size variables
+
+    --#{clamp12}: #{$clamp12};
+    --#{clamp14}: #{$clamp14};
+    --#{clamp16}: #{$clamp16};
+    --#{clamp18}: #{$clamp18};
+    --#{clamp22}: #{$clamp22};
+    --#{clamp24}: #{$clamp24};
+    --#{clamp26}: #{$clamp26};
+    --#{clamp28}: #{$clamp28};
+    --#{clamp30}: #{$clamp30};
+    --#{clamp36}: #{$clamp36};
+    --#{clamp48}: #{$clamp48};
+    --#{clamp60}: #{$clamp60};
+    --#{clamp72}: #{$clamp72};
+    --#{clamp84}: #{$clamp84};
+
+    // global shadow variables
+
+    --#{shadow-md}: #{$shadow-md};
+    --#{shadow-sm}: #{$shadow-sm};
+    --#{shadow-xs}: #{$shadow-xs};
+
+}

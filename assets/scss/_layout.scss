@@ -1,0 +1,171 @@
+.app {
+    align-items: stretch;
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    .aside-navbar {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        position: fixed;
+        width: 14rem;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        background: $color5;
+        transition: margin-left .1s ease-in-out, left .1s ease-in-out, margin-right .1s ease-in-out, right .1s ease-in-out;
+        z-index: 1020;
+
+        .navbar-brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: .15rem;
+            position: fixed;
+            margin-right: 0;
+        }
+
+        .nav-content {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            overflow: auto;
+            height: calc(100vh - 60px);
+            margin: 4rem 0;
+            padding-bottom: 1rem;
+
+            .nav-pills {
+                .nav-item {
+                    display: block;
+                    width: 100%;
+
+                    &:not(:last-child) {
+                        margin-bottom: 0.68rem;
+                    }
+
+                    .nav-link {
+                        display: flex;
+                        align-items: center;
+                        padding: 0.5rem 0.65rem;
+                        color: $color7;
+                        border: 1px solid rgba(255, 255, 255, 0);
+                        border-radius: .45rem;
+                        transition: all 0s ease-in-out;
+
+                        i {
+                            width: 30px;
+                            height: 30px;
+                            font-size: $clamp18;
+                            align-items: center;
+                            display: flex;
+                            justify-content: center;
+                            border-radius: 50%;
+                            background: lighten($color5, 10%);
+                        }
+
+                        .nav-text {
+                            margin-left: 0.35rem;
+                            font-size: $clamp16;
+                        }
+
+                        &:hover,
+                        &.active {
+                            color: $color7;
+                            background: $bg-active;
+
+                            i {
+                                color: $color8;
+                                background: lighten($color7, $amount: 1);
+                                box-shadow: $shadow-sm;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.hide-sidebar {
+            width: 4.2rem;
+
+            .navbar-brand span,
+            .nav-content .nav-pills .nav-item .nav-link .nav-text {
+                display: none;
+            }
+        }
+    }
+
+    &-wrapper {
+        min-height: calc(100vh - 72px);
+        min-width: 0;
+        width: 100%;
+        margin-left: 14rem;
+
+        @media (max-width: 991px) {
+            margin-left: 0;
+        }
+
+        .overlay {
+            @media (min-width: 992px) {
+                display: none;
+            }
+
+            @media (max-width: 991px) {
+                display: block;
+            }
+
+            &.hide-sidebar {
+                @media (max-width: 991px) {
+                    display: none;
+                }
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.15);
+                backdrop-filter: blur(4px);
+                z-index: 1017;
+            }
+        }
+
+        header {
+            padding: 15px;
+            color: $color4;
+            background: $color7;
+            box-shadow: $shadow-xs;
+            z-index: 1016;
+
+            .nav .nav-item .nav-link {
+                padding: .2rem 1rem;
+            }
+        }
+
+        &-content {
+            min-height: calc(100vh - 122px);
+            border-radius: 0.45rem;
+            background: $color6;
+
+            .section-heading {
+                border-bottom: 1px dashed #cdcdcd;
+            }
+        }
+
+        .footer-copyright {
+            background: #efefef;
+        }
+
+        &.hide-sidebar {
+            margin-left: 4.2rem;
+        }
+    }
+}
